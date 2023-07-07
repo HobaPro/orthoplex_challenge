@@ -1,7 +1,6 @@
 import { Router } from "express";
 
-import authRoute from "./auth.route.js";
-import interactionsRoute from "./interactions.route.js";
+import authRoute from "./auth.router.js";
 
 const router = Router();
 
@@ -10,6 +9,5 @@ router.get("/", (req, res) => {
 })
 
 router.use(authRoute);
-router.use(interactionsRoute);
 
 export default router;
