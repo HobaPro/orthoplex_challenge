@@ -9,6 +9,6 @@ const app = express();
 app.use(express.json());
 dotenv.config();
 
-app.use(mainRouter);
+app.use("/api", mainRouter);
 
 app.listen(process.env.PORT);

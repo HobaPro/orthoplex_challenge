@@ -2,16 +2,25 @@ import { Router } from "express";
 import {
     Register,
     LogIn,
+    GetUser,
+    GetUsers,
     VerifyUser,
     CheckUserAuthorization,
-    CDeleteUser,
-} from "../controllers/auth.controller.js";
+    DeleteUser,
+} from "../controllers/user.controller.js";
 
 const router = Router();
 
-router.post("/api/register", Register);
-router.post("/api/login", LogIn);
-//router.get("/api/getuser", CheckUserAuthorization, GetUser);
-router.delete("/api/deleteuser", CDeleteUser);
+router.post("/register", Register);
+
+router.post("/login", LogIn);
+
+router.get("/getuser", CheckUserAuthorization, GetUser);
+
+router.get("/getusers", GetUsers);
+
+router.delete("/deleteuser", DeleteUser);
+
+router.put("/verifyme/:id", VerifyUser);
 
 export default router;
